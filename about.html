@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn more about EduVerse and our mission to revolutionize online education." />
+    <title>Tech Insight | About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        :root {
+            --primary-color: #4e54c8;
+            --secondary-color: #8f94fb;
+            --accent-color: #f6d365;
+            --dark-color: #2a2d3b;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.2rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        h1, h2, h3 {
+            color: var(--dark-color);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 3rem 0 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent-color), #fda085);
+            border-radius: 2px;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        ol {
+            padding-left: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        ol li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        ol li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease forwards;
+            text-align: center;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--accent-color);
+        }
+        
+        .team-member h3 {
+            margin: 1.2rem 0 0.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .team-member p {
+            color: #777;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 1rem;
+            flex: 1;
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .mission-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .mission-section h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-section h2::after {
+            background: var(--accent-color);
+        }
+        
+        .mission-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+        }
+        
+        .social-links {
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+                text-align: center;
+            }
+            
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="container">
+        <h1>About EduVerse</h1>
+        <p>EduVerse is revolutionizing online education by providing high-quality, accessible learning experiences to students worldwide. Our platform combines cutting-edge technology with expert instruction to create transformative educational journeys.</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">50,000+</div>
+                <div class="stat-label">Students Enrolled</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Expert Instructors</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Course Categories</div>
+            </div>
+        </div>
+
+        <section>
+            <h2>Our Journey</h2>
+            <ol>
+                <li><strong>2019</strong> - Founded with 3 instructors and a vision to democratize education</li>
+                <li><strong>2020</strong> - Reached 10,000+ enrolled students and expanded to 5 countries</li>
+                <li><strong>2021</strong> - Launched mobile app for iOS and Android</li>
+                <li><strong>2022</strong> - Expanded to 12 course categories with industry-recognized certifications</li>
+                <li><strong>2023</strong> - Partnered with top universities for accredited programs</li>
+            </ol>
+        </section>
+
+        <section class="mission-section">
+            <h2>Our Mission</h2>
+            <p>To break down barriers to education by providing affordable, high-quality learning opportunities to anyone, anywhere. We believe education should be engaging, accessible, and transformative.</p>
+        </section>
+
+        <section>
+            <h2>Our Team</h2>
+            <div class="grid">
+                <div class="team-member delay-1">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Ankit Mehra">
+                    <h3>Ankit Mehra</h3>
+                    <p>CEO & Co-founder</p>
+                    <p class="team-bio">Former education technology researcher with a passion for making learning accessible to all.</p>
+                </div>
+        
+                <div class="team-member delay-2">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Riya Joshi">
+                    <h3>Riya Joshi</h3>
+                    <p>Chief Academic Officer</p>
+                    <p class="team-bio">Curriculum design expert with 15 years of experience in online education platforms.</p>
+                </div>
+                
+                <div class="team-member delay-3">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="David Chen">
+                    <h3>David Chen</h3>
+                    <p>CTO</p>
+                    <p class="team-bio">Technology innovator focused on creating seamless learning experiences through AI and machine learning.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Our Values</h2>
+            <div class="grid">
+                <div class="value-card">
+                    <i class="fas fa-globe-americas fa-3x" style="color: #4e54c8;"></i>
+                    <h3>Accessibility</h3>
+                    <p>We believe education should be available to everyone, regardless of location or financial situation.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb fa-3x" style="color: #f6d365;"></i>
+                    <h3>Innovation</h3>
+                    <p>We continuously evolve our platform to incorporate the latest educational technologies.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-heart fa-3x" style="color: #ff6b6b;"></i>
+                    <h3>Passion</h3>
+                    <p>Our team is driven by a shared love for learning and student success.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2025 EduVerse. All rights reserved.</p>
+        <p>Transforming lives through education</p>
+    </footer>
+
+</body>
+</html>

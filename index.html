@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog Layout</title>
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(99,102,241,0.9), rgba(139,92,246,0.9));
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            animation: fadeInDown 1s ease;
+            border-bottom: 5px solid #fff3;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: darkblue;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            list-style: none;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        nav a:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        main {
+            flex: 2;
+        }
+
+        article {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        article:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 50px rgba(0,0,0,0.15);
+        }
+
+        article h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: darkblue;
+        }
+
+        article p {
+            color: #444;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #4f46e5;
+            font-weight: bold;
+            text-decoration: none;
+            position: relative;
+            padding-right: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .read-more::after {
+            content: '→';
+            position: absolute;
+            right: 0;
+            transition: right 0.3s ease;
+        }
+
+        .read-more:hover::after {
+            right: -0.3rem;
+        }
+
+        aside {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        aside:hover {
+            transform: translateY(-5px);
+        }
+
+        aside h3 {
+            color: #4f46e5;
+            margin-bottom: 1rem;
+        }
+
+        aside ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        aside ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        aside ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Tech Insights</h1>
+        <nav>
+            <ul class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <article>
+                <h2>Web Development Trends 2024</h2>
+                <p>Discover the latest trends in web development including AI integration, advanced CSS techniques, and performance optimization strategies...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+            <article>
+                <h2>Mastering CSS Grid</h2>
+                <p>Learn how to create complex layouts with CSS Grid through practical examples and real-world applications...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+            <article>
+                <h2>JavaScript Best Practices</h2>
+                <p>Explore essential JavaScript patterns and practices that every developer should know for writing clean, efficient code...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+        </main>
+        <aside>
+            <section>
+                <h3>About Me</h3>
+                <p>Full-stack developer with 5+ years of experience in creating web applications and teaching programming concepts.</p>
+            </section>
+            <section>
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">Cloud Computing</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3>Recent Posts</h3>
+                <ul>
+                    <li><a href="#">Getting Started with React</a></li>
+                    <li><a href="#">CSS Animations Guide</a></li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+</body>
+</html>
